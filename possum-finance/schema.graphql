@@ -1,0 +1,6 @@
+type ExampleEntity @entity {
+  id: Bytes!
+  count: BigInt!
+  lastDirectionResult: BigInt! # uint256
+  epochReward: BigInt! # uint256
+}

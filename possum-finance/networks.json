@@ -1,0 +1,8 @@
+{
+  "arbitrum-sepolia": {
+    "SignalVault": {
+      "address": "0x5AcDD148C80B7C46F8dbd34968ba138631a2246F",
+      "startBlock": 213897873
+    }
+  }
+}
