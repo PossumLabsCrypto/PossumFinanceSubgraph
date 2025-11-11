@@ -1,0 +1,180 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: SignalVaultETHUSD
+    network: arbitrum-sepolia
+    source:
+      address: "0xb455be30b6014bc3e4e40e5e66a576bee1dbcfc7"
+      abi: SignalVault
+      startBlock: 213897873
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - EpochSettled
+        - PredictionPosted
+        - RewardCompounded
+        - Staked
+        - SyncFailed
+        - Unstaked
+      abis:
+        - name: SignalVault
+          file: ./abis/SignalVault.json
+      eventHandlers:
+        - event: EpochSettled(indexed uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleEpochSettled
+        - event: PredictionPosted(indexed address,indexed uint256,uint256,uint256,uint256)
+          handler: handlePredictionPosted
+        - event: RewardCompounded(indexed address,uint256)
+          handler: handleRewardCompounded
+        - event: Staked(indexed address,uint256)
+          handler: handleStaked
+        - event: SyncFailed(indexed address)
+          handler: handleSyncFailed
+        - event: Unstaked(indexed address,uint256)
+          handler: handleUnstaked
+      file: ./src/signal-vault.ts
+  - kind: ethereum
+    name: AssetVaultETHUSD
+    network: arbitrum-sepolia
+    source:
+      address: "0xf654b4fc092947efe1af8cf94231a9b5c5b15b60"
+      abi: AssetVault
+      startBlock: 213897873
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - RedeemedPSM
+        - Swap
+      abis:
+        - name: AssetVault
+          file: ./abis/AssetVault.json
+      eventHandlers:
+        - event: RedeemedPSM(indexed address,indexed address,uint256,uint256)
+          handler: handleRedeemedPSM
+        - event: Swap(indexed address,uint256,uint256)
+          handler: handleSwap
+      file: ./src/asset-vault.ts
+  - kind: ethereum
+    name: SignalVaultARBUSD
+    network: arbitrum-sepolia
+    source:
+      address: "0x9725da91aa34ba33d2bdbd165959f49e7d4eabd2"
+      abi: SignalVault
+      startBlock: 213897873
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - EpochSettled
+        - PredictionPosted
+        - RewardCompounded
+        - Staked
+        - SyncFailed
+        - Unstaked
+      abis:
+        - name: SignalVault
+          file: ./abis/SignalVault.json
+      eventHandlers:
+        - event: EpochSettled(indexed uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleEpochSettled
+        - event: PredictionPosted(indexed address,indexed uint256,uint256,uint256,uint256)
+          handler: handlePredictionPosted
+        - event: RewardCompounded(indexed address,uint256)
+          handler: handleRewardCompounded
+        - event: Staked(indexed address,uint256)
+          handler: handleStaked
+        - event: SyncFailed(indexed address)
+          handler: handleSyncFailed
+        - event: Unstaked(indexed address,uint256)
+          handler: handleUnstaked
+      file: ./src/signal-vault.ts
+  - kind: ethereum
+    name: AssetVaultARBUSD
+    network: arbitrum-sepolia
+    source:
+      address: "0xd6ad93e6b803cb1e05f50f5b6d0375427547a7cb"
+      abi: AssetVault
+      startBlock: 213897873
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - RedeemedPSM
+        - Swap
+      abis:
+        - name: AssetVault
+          file: ./abis/AssetVault.json
+      eventHandlers:
+        - event: RedeemedPSM(indexed address,indexed address,uint256,uint256)
+          handler: handleRedeemedPSM
+        - event: Swap(indexed address,uint256,uint256)
+          handler: handleSwap
+      file: ./src/asset-vault.ts
+  - kind: ethereum
+    name: SignalVaultLINKETH
+    network: arbitrum-sepolia
+    source:
+      address: "0x53a8f6f0d5a8c8121f97a9c1a648adebbb723da2"
+      abi: SignalVault
+      startBlock: 213897873
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - EpochSettled
+        - PredictionPosted
+        - RewardCompounded
+        - Staked
+        - SyncFailed
+        - Unstaked
+      abis:
+        - name: SignalVault
+          file: ./abis/SignalVault.json
+      eventHandlers:
+        - event: EpochSettled(indexed uint256,uint256,uint256,uint256,uint256,uint256)
+          handler: handleEpochSettled
+        - event: PredictionPosted(indexed address,indexed uint256,uint256,uint256,uint256)
+          handler: handlePredictionPosted
+        - event: RewardCompounded(indexed address,uint256)
+          handler: handleRewardCompounded
+        - event: Staked(indexed address,uint256)
+          handler: handleStaked
+        - event: SyncFailed(indexed address)
+          handler: handleSyncFailed
+        - event: Unstaked(indexed address,uint256)
+          handler: handleUnstaked
+      file: ./src/signal-vault.ts
+  - kind: ethereum
+    name: AssetVaultLINKETH
+    network: arbitrum-sepolia
+    source:
+      address: "0x276ab24597bc93b0507c7567280d4461cbadf320"
+      abi: AssetVault
+      startBlock: 213897873
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - RedeemedPSM
+        - Swap
+      abis:
+        - name: AssetVault
+          file: ./abis/AssetVault.json
+      eventHandlers:
+        - event: RedeemedPSM(indexed address,indexed address,uint256,uint256)
+          handler: handleRedeemedPSM
+        - event: Swap(indexed address,uint256,uint256)
+          handler: handleSwap
+      file: ./src/asset-vault.ts

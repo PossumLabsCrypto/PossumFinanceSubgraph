@@ -1,0 +1,90 @@
+# User entity - tracks individual user data across all vaults
+type User @entity {
+  id: ID! # user address
+  totalStaked: BigInt! # current total staked across all vaults
+  totalRewardsClaimed: BigInt! # lifetime rewards claimed
+  totalPredictions: BigInt! # total number of predictions made
+  predictions: [Prediction!]! @derivedFrom(field: "user")
+  rewardClaims: [RewardClaim!]! @derivedFrom(field: "user")
+  stakes: [StakeEvent!]! @derivedFrom(field: "user")
+  unstakes: [UnstakeEvent!]! @derivedFrom(field: "user")
+}
+
+# Epoch Settlement - tracks each epoch's results
+type EpochSettlement @entity {
+  id: ID! # vault address + settlementTime
+  vault: Bytes! # vault address
+  settlementTime: BigInt! # timestamp when epoch was settled
+  lastDirectionResult: BigInt! # 1 for UP, 2 for DOWN
+  epochReward: BigInt! # total rewards for this epoch
+  winnerVotes: BigInt! # total votes on winning side
+  winnerStakeTotal: BigInt! # total stake on winning side
+  settlementPrice: BigInt! # oracle price at settlement
+  blockTimestamp: BigInt!
+}
+
+# Prediction - tracks individual user predictions for each epoch
+type Prediction @entity {
+  id: ID! # vault + user address + settlementTime
+  user: User! # reference to User
+  vault: Bytes! # vault address
+  settlementTime: BigInt! # the epoch this prediction is for
+  stakedBalance: BigInt! # user's staked balance at prediction time
+  votes: BigInt! # voting power
+  upOrDown1Or2: BigInt! # 1 for UP, 2 for DOWN
+  rewardClaim: RewardClaim # reference to claim event (if claimed)
+  blockTimestamp: BigInt!
+}
+
+# Reward Claim - tracks when users claim rewards
+type RewardClaim @entity(immutable: true) {
+  id: ID! # transaction hash + log index
+  user: User! # reference to User
+  vault: Bytes! # vault address
+  amount: BigInt! # amount claimed
+  prediction: Prediction # reference to the prediction this claim is for
+  blockTimestamp: BigInt!
+}
+
+# Stake Event - tracks staking events
+type StakeEvent @entity(immutable: true) {
+  id: ID! # transaction hash + log index
+  user: User! # reference to User
+  vault: Bytes! # vault address
+  amount: BigInt! # amount staked
+  blockTimestamp: BigInt!
+}
+
+# Unstake Event - tracks unstaking events
+type UnstakeEvent @entity(immutable: true) {
+  id: ID! # transaction hash + log index
+  user: User! # reference to User
+  vault: Bytes! # vault address
+  amount: BigInt! # amount unstaked
+  blockTimestamp: BigInt!
+}
+
+# Sync Failed Event - tracks sync failures
+type SyncFailed @entity(immutable: true) {
+  id: ID! # transaction hash + log index
+  pool: Bytes! # pool address
+  blockTimestamp: BigInt!
+}
+
+# Asset Vault Events
+type RedeemedPSM @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  tokenOut: Bytes! # address
+  amountPSM: BigInt! # uint256
+  amountTokenOut: BigInt! # uint256
+  blockTimestamp: BigInt!
+}
+
+type Swap @entity(immutable: true) {
+  id: Bytes!
+  tokenIn: Bytes! # address
+  amountIn: BigInt! # uint256
+  amountOut: BigInt! # uint256
+  blockTimestamp: BigInt!
+}
