@@ -8,9 +8,9 @@ dataSources:
     name: SignalVaultETHUSD
     network: arbitrum-sepolia
     source:
-      address: "0xb455be30b6014bc3e4e40e5e66a576bee1dbcfc7"
+      address: "0x380FFc0DE6A677ba1f02F90993Aed3670Cf85fAF"
       abi: SignalVault
-      startBlock: 213897873
+      startBlock: 214687818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -43,9 +43,9 @@ dataSources:
     name: AssetVaultETHUSD
     network: arbitrum-sepolia
     source:
-      address: "0xf654b4fc092947efe1af8cf94231a9b5c5b15b60"
+      address: "0xf3B73Ce219c93F4749a911DaE36C653B5782F4b0"
       abi: AssetVault
-      startBlock: 213897873
+      startBlock: 214687818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -66,9 +66,9 @@ dataSources:
     name: SignalVaultARBUSD
     network: arbitrum-sepolia
     source:
-      address: "0x9725da91aa34ba33d2bdbd165959f49e7d4eabd2"
+      address: "0xD96CCD5e348dBCC7fD9ba46CB47539b098486CA2"
       abi: SignalVault
-      startBlock: 213897873
+      startBlock: 214687818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -101,9 +101,9 @@ dataSources:
     name: AssetVaultARBUSD
     network: arbitrum-sepolia
     source:
-      address: "0xd6ad93e6b803cb1e05f50f5b6d0375427547a7cb"
+      address: "0x660d6c9e34c6c119a43458b339680c09d4ab120F"
       abi: AssetVault
-      startBlock: 213897873
+      startBlock: 214687818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -124,9 +124,9 @@ dataSources:
     name: SignalVaultLINKETH
     network: arbitrum-sepolia
     source:
-      address: "0x53a8f6f0d5a8c8121f97a9c1a648adebbb723da2"
+      address: "0x458D27a0005e904Bf103F343F650FE8e4eA994a3"
       abi: SignalVault
-      startBlock: 213897873
+      startBlock: 214687818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -159,9 +159,9 @@ dataSources:
     name: AssetVaultLINKETH
     network: arbitrum-sepolia
     source:
-      address: "0x276ab24597bc93b0507c7567280d4461cbadf320"
+      address: "0x36BD13719aA3415f3117D188AACD30E1AbC85c3A"
       abi: AssetVault
-      startBlock: 213897873
+      startBlock: 214687818
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
