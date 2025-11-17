@@ -24,6 +24,14 @@ export function getOrCreateUser(address: Bytes): User {
   return user;
 }
 
+export function getOrCreatePrediction(id: string): Prediction {
+  let prediction = Prediction.load(id);
+  if (!prediction) {
+    prediction = new Prediction(id);
+  }
+  return prediction;
+}
+
 /**
  * Handle EpochSettled event
  */
@@ -79,7 +87,7 @@ export function handlePredictionPostedEvent(
     userAddress.toHexString() +
     "-" +
     settlementTime.toString();
-  let prediction = new Prediction(predictionId);
+  let prediction = getOrCreatePrediction(predictionId);
 
   prediction.user = user.id;
   prediction.vault = vaultAddress;
