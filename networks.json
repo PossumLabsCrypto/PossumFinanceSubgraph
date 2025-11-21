@@ -1,28 +1,28 @@
 {
   "arbitrum-sepolia": {
     "SignalVaultETHUSD": {
-      "address": "0x380FFc0DE6A677ba1f02F90993Aed3670Cf85fAF",
-      "startBlock": 214687818
+      "address": "0x0ee2b4ededdd55ac15c50c457cf3bad43242e9e4",
+      "startBlock": 217225430
     },
     "AssetVaultETHUSD": {
-      "address": "0xf3B73Ce219c93F4749a911DaE36C653B5782F4b0",
-      "startBlock": 214687818
+      "address": "0xc0205378a82e629b91b4000aeb047deb335fbe83",
+      "startBlock": 217225430
     },
     "SignalVaultARBUSD": {
-      "address": "0xD96CCD5e348dBCC7fD9ba46CB47539b098486CA2",
-      "startBlock": 214687818
+      "address": "0x425176564525417dbba383143748cf6b5c4b3b5e",
+      "startBlock": 217225430
     },
     "AssetVaultARBUSD": {
-      "address": "0x660d6c9e34c6c119a43458b339680c09d4ab120F",
-      "startBlock": 214687818
+      "address": "0xad293e02e59dfe247753b9f2d612f99e67b44656",
+      "startBlock": 217225430
     },
     "SignalVaultLINKETH": {
-      "address": "0x458D27a0005e904Bf103F343F650FE8e4eA994a3",
-      "startBlock": 214687818
+      "address": "0xc48739f763f8ac8f5bd48a81328851e9e008cc30",
+      "startBlock": 217225430
     },
     "AssetVaultLINKETH": {
-      "address": "0x36BD13719aA3415f3117D188AACD30E1AbC85c3A",
-      "startBlock": 214687818
+      "address": "0x962819907502EDCBE17006DC0b2AE9c0eBAb768f",
+      "startBlock": 217225430
     }
   }
 }
