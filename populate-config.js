@@ -2,22 +2,23 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
 
+
 // Contract addresses for different vault pairs
 const vaultPairs = [
   {
     name: "ETHUSD",
-    signalVault: "0x0ee2b4ededdd55ac15c50c457cf3bad43242e9e4",
-    assetVault: "0xc0205378a82e629b91b4000aeb047deb335fbe83",
+    signalVault: "0x5f150ac7beeb28cba4585e381641fa67cfbb8e80",
+    assetVault: "0xcdd17913b7100e8d49f08a2fdb065e980776f739",
   },
   {
     name: "ARBUSD",
-    signalVault: "0x425176564525417dbba383143748cf6b5c4b3b5e",
-    assetVault: "0xad293e02e59dfe247753b9f2d612f99e67b44656",
+    signalVault: "0xc796fe684aa414e8e225966007dde6d150ed39aa",
+    assetVault: "0x77acfbf4bf0c397936e8f0c6cf1d0b6dc3d905bb",
   },
   {
     name: "LINKETH",
-    signalVault: "0xc48739f763f8ac8f5bd48a81328851e9e008cc30",
-    assetVault: "0x962819907502EDCBE17006DC0b2AE9c0eBAb768f",
+    signalVault: "0x1d5880337cbd18878eb84894b75edc4161da04f1",
+    assetVault: "0xe3752edf89c25e5dfc663b487b2be1d34bc7ce2c",
   },
 ];
 
