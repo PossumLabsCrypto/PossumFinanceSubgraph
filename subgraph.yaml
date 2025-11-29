@@ -6,11 +6,11 @@ schema:
 dataSources:
   - kind: ethereum
     name: SignalVaultETHUSD
-    network: arbitrum-sepolia
+    network: arbitrum-one
     source:
-      address: "0x5f150ac7beeb28cba4585e381641fa67cfbb8e80"
+      address: "0xb800b8dbcf9a78b16f5c1135cd1a39384abf1fbc"
       abi: SignalVault
-      startBlock: 217225430
+      startBlock: 403446009
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -41,127 +41,11 @@ dataSources:
       file: ./src/signal-vault.ts
   - kind: ethereum
     name: AssetVaultETHUSD
-    network: arbitrum-sepolia
+    network: arbitrum-one
     source:
-      address: "0xcdd17913b7100e8d49f08a2fdb065e980776f739"
+      address: "0xc7a22081662faeedc27993cb72cba6141e15ba48"
       abi: AssetVault
-      startBlock: 217225430
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - RedeemedPSM
-        - Swap
-      abis:
-        - name: AssetVault
-          file: ./abis/AssetVault.json
-      eventHandlers:
-        - event: RedeemedPSM(indexed address,indexed address,uint256,uint256)
-          handler: handleRedeemedPSM
-        - event: Swap(indexed address,uint256,uint256)
-          handler: handleSwap
-      file: ./src/asset-vault.ts
-  - kind: ethereum
-    name: SignalVaultARBUSD
-    network: arbitrum-sepolia
-    source:
-      address: "0xc796fe684aa414e8e225966007dde6d150ed39aa"
-      abi: SignalVault
-      startBlock: 217225430
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - EpochSettled
-        - PredictionPosted
-        - RewardCompounded
-        - Staked
-        - SyncFailed
-        - Unstaked
-      abis:
-        - name: SignalVault
-          file: ./abis/SignalVault.json
-      eventHandlers:
-        - event: EpochSettled(indexed uint256,uint256,uint256,uint256,uint256,uint256)
-          handler: handleEpochSettled
-        - event: PredictionPosted(indexed address,indexed uint256,uint256,uint256,uint256)
-          handler: handlePredictionPosted
-        - event: RewardCompounded(indexed address,uint256)
-          handler: handleRewardCompounded
-        - event: Staked(indexed address,uint256)
-          handler: handleStaked
-        - event: SyncFailed(indexed address)
-          handler: handleSyncFailed
-        - event: Unstaked(indexed address,uint256)
-          handler: handleUnstaked
-      file: ./src/signal-vault.ts
-  - kind: ethereum
-    name: AssetVaultARBUSD
-    network: arbitrum-sepolia
-    source:
-      address: "0x77acfbf4bf0c397936e8f0c6cf1d0b6dc3d905bb"
-      abi: AssetVault
-      startBlock: 217225430
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - RedeemedPSM
-        - Swap
-      abis:
-        - name: AssetVault
-          file: ./abis/AssetVault.json
-      eventHandlers:
-        - event: RedeemedPSM(indexed address,indexed address,uint256,uint256)
-          handler: handleRedeemedPSM
-        - event: Swap(indexed address,uint256,uint256)
-          handler: handleSwap
-      file: ./src/asset-vault.ts
-  - kind: ethereum
-    name: SignalVaultLINKETH
-    network: arbitrum-sepolia
-    source:
-      address: "0x1d5880337cbd18878eb84894b75edc4161da04f1"
-      abi: SignalVault
-      startBlock: 217225430
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - EpochSettled
-        - PredictionPosted
-        - RewardCompounded
-        - Staked
-        - SyncFailed
-        - Unstaked
-      abis:
-        - name: SignalVault
-          file: ./abis/SignalVault.json
-      eventHandlers:
-        - event: EpochSettled(indexed uint256,uint256,uint256,uint256,uint256,uint256)
-          handler: handleEpochSettled
-        - event: PredictionPosted(indexed address,indexed uint256,uint256,uint256,uint256)
-          handler: handlePredictionPosted
-        - event: RewardCompounded(indexed address,uint256)
-          handler: handleRewardCompounded
-        - event: Staked(indexed address,uint256)
-          handler: handleStaked
-        - event: SyncFailed(indexed address)
-          handler: handleSyncFailed
-        - event: Unstaked(indexed address,uint256)
-          handler: handleUnstaked
-      file: ./src/signal-vault.ts
-  - kind: ethereum
-    name: AssetVaultLINKETH
-    network: arbitrum-sepolia
-    source:
-      address: "0xe3752edf89c25e5dfc663b487b2be1d34bc7ce2c"
-      abi: AssetVault
-      startBlock: 217225430
+      startBlock: 403446009
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
