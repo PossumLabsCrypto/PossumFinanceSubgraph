@@ -2,18 +2,27 @@ const fs = require("fs");
 const path = require("path");
 const yaml = require("js-yaml");
 
-
 // Contract addresses for different vault pairs
 const vaultPairs = [
   {
     name: "ETHUSD",
-    signalVault: "0xb800b8dbcf9a78b16f5c1135cd1a39384abf1fbc",
-    assetVault: "0xc7a22081662faeedc27993cb72cba6141e15ba48",
+    signalVault: "0x5f150AC7bEEb28cBA4585E381641FA67cfBB8E80",
+    assetVault: "0xcdD17913b7100e8D49f08a2FdB065E980776f739",
+  },
+  {
+    name: "ARBUSD",
+    signalVault: "0xC796fE684aa414e8E225966007DdE6d150ED39AA",
+    assetVault: "0x77acFbf4bf0c397936e8f0c6Cf1d0B6dC3d905bB",
+  },
+  {
+    name: "LINKETH",
+    signalVault: "0x1D5880337cbD18878eb84894b75EDC4161Da04F1",
+    assetVault: "0xE3752EDF89c25e5DfC663B487b2BE1D34Bc7ce2C",
   },
 ];
 
-const NETWORK = "arbitrum-one";
-const START_BLOCK = 403446009;
+const NETWORK = "arbitrum-sepolia";
+const START_BLOCK = 217225430;
 
 /**
  * Create a SignalVault data source configuration
